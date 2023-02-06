@@ -52,12 +52,12 @@ If Alice sends a transaction to contract A, contract A sees the address of Alice
 
 ```
 Alice --> Contract A
-					msg.sender = Alice
-					tx.origin = Alice
+		msg.sender = Alice
+		tx.origin = Alice
 
 Contract A --> Contract B
-								msg.sender = Contract A
-								tx.origin = Alice
+		msg.sender = Contract A
+		tx.origin = Alice
 ```
 
 In Summary, 
@@ -103,7 +103,7 @@ await contract.owner()
 # Key Takeaways
 
 <aside>
-💡 While this example may be simple, confusing `tx.origin` with `msg.sender` can lead to phishing-style attacks, such as [this](https://blog.ethereum.org/2016/06/24/security-alert-smart-contract-wallets-created-in-frontier-are-vulnerable-to-phishing-attacks/).
+💡 While this example may be simple, confusing `tx.origin` with `msg.sender` can lead to phishing-style attacks, such as [this](https://blog.ethereum.org/2016/06/24/security-alert-smart-contract-wallets-created-in-frontier-are-vulnerable-to-phishing-attacks/)/
 
 An example of a possible attack is outlined below.
 
@@ -116,7 +116,7 @@ function transfer(address _to, uint _value) {
 }
 ```
 
-1. Attacker gets victim to send funds to a malicious contract that calls the transfer function of the token contract, e.g.
+2. Attacker gets victim to send funds to a malicious contract that calls the transfer function of the token contract, e.g.
 
 ```solidity
 function () payable {
@@ -124,7 +124,7 @@ function () payable {
 }
 ```
 
-1. In this scenario, `tx.origin` will be the victim's address (while `msg.sender` will be the malicious contract's address), resulting in the funds being transferred from the victim to the attacker.
+3. In this scenario, `tx.origin` will be the victim's address (while `msg.sender` will be the malicious contract's address), resulting in the funds being transferred from the victim to the attacker.
 </aside>
 
 The above message is quoted by OpenZeppelin. In addition to that, I will just leave a link to one of [Vitalik Buterin](https://ethereum.stackexchange.com/users/188/vitalik-buterin)’s response in [ethereum.stackexchange.com](http://ethereum.stackexchange.com/) - 
@@ -139,4 +139,4 @@ The above message is quoted by OpenZeppelin. In addition to that, I will just le
 > 
 > It's not certain that all of those steps will be required, or that they will be sufficient, but that should get you most of the way there.
 
->https://ethereum.stackexchange.com/questions/196/how-do-i-make-my-dapp-serenity-proof
+https://ethereum.stackexchange.com/questions/196/how-do-i-make-my-dapp-serenity-proof
