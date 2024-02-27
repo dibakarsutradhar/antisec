@@ -193,7 +193,7 @@ it('Execution', async function () {
 
 And upon running the test, you should see the test is passing in the terminal.
 
-![Challenge Pass](https://prod-files-secure.s3.us-west-2.amazonaws.com/39724ceb-e846-472b-8f8b-8f5f4cf6baf2/eed2ca0d-bb99-4ffa-a18b-07fb57ff9aec/Screenshot_2024-02-27_at_8.28.57_PM.png)
+![Challenge Pass](../images/04-side-entrance-1.png)
 
 # Mitigation
 
@@ -222,4 +222,4 @@ contract SideEntranceLenderPool is ReentrancyGuard {
 
 Here’s how the same test run looks after that -
 
-![Challenge Fail](https://prod-files-secure.s3.us-west-2.amazonaws.com/39724ceb-e846-472b-8f8b-8f5f4cf6baf2/ca855b91-49b5-45f1-b707-4d2f5d6658fd/Screenshot_2024-02-27_at_9.16.06_PM.png)
+![Challenge Fail](../images/04-side-entrance-2.png)
